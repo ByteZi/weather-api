@@ -45,13 +45,10 @@ function App() {
     return data
   }
 
-
- 
   return (
     <div className="App">
       
       <Form setCity={setCity} setTempList={setTempList} setLoad={setLoad} setTimeZone={setTimeZone} city={city} userTemp={userTemp} setUserTemp={setUserTemp} userTime={userTime}/>
-
       {load && <Display city={city} tempList={tempList} timeZone={timeZone} setTempList={setTempList} userTemp={userTemp} setCity={setCity}/>}
 
     </div>
