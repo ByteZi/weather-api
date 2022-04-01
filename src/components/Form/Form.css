@@ -25,6 +25,8 @@
 
     color: white;
     border-radius: 10px;
+
+    
 }
 
 /* Header right */
@@ -53,15 +55,15 @@
 
 .search::placeholder {
     color: rgba(255, 255, 255, 0.5);
-    text-align:center;
 }
 
 /* ---- */
 
 .btn_search {
     width: 90px;
-    background-color: rgb(228, 168, 64);
-    border-radius: 50px;
+    padding:5px;
+    background-color: rgb(216, 187, 57);
+    border-radius:10px;
     box-shadow: 1px 1px 0px rgb(0, 0, 0);
 }
 
@@ -71,8 +73,6 @@
     transform: translatex(2px);
     box-shadow: 1px 1px 0px rgb(0, 0, 0);
 }
-
-
 
 .search, .btn_search {
     font-size: 25px;
@@ -156,9 +156,6 @@ span {
     width:70px;
 }
 
-
-
-
 /* LOADING ANIM */
 
 .ball {
@@ -183,3 +180,4 @@ span {
         transform: rotate(360deg)
     }
 }
+

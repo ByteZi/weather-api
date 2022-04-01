@@ -1,16 +1,16 @@
-import UnixConvert from './UnixConvert'
+import Temp from './Temp'
 import './Display.css'
 
 
 const Display = (props) => {
 
-    const { city, setCity, tempList, setTempList } = props //timeZone // userTemp
+    const { city, setCity, tempList, setTempList, timeZone } = props //timeZone // userTemp
 
     const UnixForecastConvert = (unix_timestamp) => {
         var date = new Date(unix_timestamp * 1000)
         const forecast_date = {
-            day: UnixConvert.GetDay(date.getDay()),
-            month: UnixConvert.GetMonth(date.getMonth()),
+            day: Temp.GetDay(date.getDay()),
+            month: Temp.GetMonth(date.getMonth()),
             date: date.getDate()
         }
         return forecast_date
@@ -23,9 +23,10 @@ const Display = (props) => {
 
             <div className='forecast_body flex'>
 
-                <div className='current_weather pointer' onClick={() => UnixConvert.ConvertCityTemp(city, setCity)}>
+                <div className='current_weather pointer' onClick={() => Temp.ConvertCityTemp(city, setCity)}>
                     {/* Add Relative time using newDate */}
-                    <h1 className='current_weather_header'>{city.name} | {city.sys.country}</h1>
+                    <h1 className='current_weather_header'>{city.name} | {city.sys.country} </h1>
+                    <h4>| {timeZone} |</h4>
                     <p>{city.dt}</p>
                     <img className='current_weather_img' src={`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`} alt='Weather' />
                     <h2>{city.weather[0].description}</h2>
@@ -54,7 +55,7 @@ const Display = (props) => {
                     tempList &&
                     tempList.map((temp, i) => {
                         return (
-                            <div className='forecast_day_card pointer' key={i} onClick={() => UnixConvert.TempConvertForecast(temp, i, tempList, setTempList)}>
+                            <div className='forecast_day_card pointer' key={i} onClick={() => Temp.TempConvertForecast(temp, i, tempList, setTempList)}>
                                 <h3 className='forecast_day'>{UnixForecastConvert(temp.dt).day}</h3>
                                 <h4 className='forecast_date'>{UnixForecastConvert(temp.dt).date} | {UnixForecastConvert(temp.dt).month}</h4>
                                 <p className='forecast_description'>{temp.weather[0].description}</p>
