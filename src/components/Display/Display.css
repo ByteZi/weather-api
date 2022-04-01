@@ -1,0 +1,134 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+@media only screen and(max-width:730px) {
+    .forecast_seven_day_footer{
+        justify-content:start;
+
+        overflow-y:scroll;
+        background-color:red;
+    }
+}
+.flex_1{
+    flex:1
+}
+
+.flex_2{
+    flex:2
+}
+
+.flex{
+    display:flex;
+}
+
+.display_parent{
+    height:68%;
+    align-items:center;
+ 
+}
+
+.pointer:hover {
+    cursor:pointer;
+}
+
+/* display BOOOOOOODYYYYYY =======================================*/
+
+.forecast_body{
+    width:100vw;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+}
+
+/* ====== */
+.current_weather{
+    width:500px;
+    
+    display:flex;
+    flex-direction:column;
+
+    padding:30px;
+    border-radius:30px;
+
+    align-items:center;
+
+    color:white;
+    background-color:#302F33;
+
+    line-height:30px;
+
+    /* background:url('https://w0.peakpx.com/wallpaper/863/211/HD-wallpaper-yin-yang-2019-art-designs-japan-new-tokyo-vector.jpg') no-repeat center center; 
+    background-size: cover; */
+}
+
+.current_weather_header{
+    background-color:#fe544171;
+    border-radius:30px;
+    padding:10px;
+}
+
+.current_weather_img{
+    width:200px;
+}
+
+.current_weather_div_container{
+    width:100%;
+    border-top:solid 2px rgba(255, 255, 255, 0.233);
+    border-bottom:solid 2px rgba(255, 255, 255, 0.233);
+    display:flex;
+    align-items:center;
+}
+
+/* ===================== */
+
+
+
+
+/*=========================  FOOOTERRRRR   ========================          */
+.forecast_seven_day_footer{
+    padding:20px;
+
+    display:flex;
+    justify-content:space-evenly;
+
+    background-color:rgba(46, 45, 45, 0.473);
+
+    position:fixed;
+    bottom:0;
+    width:100vw;
+}
+.forecast_day_card{
+    min-width:230px;
+    height:270px;
+    padding:15px;
+
+    color:white;
+
+    line-height:30px;
+
+    background-color:rgba(46, 45, 45, 0.842);
+    border-radius:20px;
+    text-align:center;
+}
+
+.forecast_day{
+    background-color:#fe544171;
+    border-radius:30px;
+}
+
+.forecast_date{
+    border-bottom:solid 2px rgba(121, 121, 121, 0.281);
+}
+
+.forecast_card_foot{
+    border-top:solid 2px rgba(121, 121, 121, 0.281);
+}
+
+.weather_img{
+    width:100%;
+}
+
+

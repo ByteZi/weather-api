@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pointer:hover{
+    cursor:pointer
+}
+
+.header>h1 {
+    font-size: 50px;
+}
+
+.header {
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    color: white;
+    border-radius: 10px;
+}
+
+/* Header right */
+
+.header_right {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 50%;
+    height: 40px;
+    align-items: center;
+}
+
+.search {
+    width: 300px;;
+    padding: 0 20px;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    border-bottom: 1px solid rgb(255, 187, 73);
+
+    color: white;
+}
+
+.search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    text-align:center;
+}
+
+/* ---- */
+
+.btn_search {
+    width: 90px;
+    background-color: rgb(228, 168, 64);
+    border-radius: 50px;
+    box-shadow: 1px 1px 0px rgb(0, 0, 0);
+}
+
+.btn_search:active {
+    background-color: rgb(216, 158, 57);
+    transform: translateY(2px);
+    transform: translatex(2px);
+    box-shadow: 1px 1px 0px rgb(0, 0, 0);
+}
+
+
+
+.search, .btn_search {
+    font-size: 25px;
+    margin-left:20px;
+}
+
+/* HEADER-LEFT */
+
+.header_left {
+    font-size: 25px;
+    align-items: center;
+}
+
+span {
+    color: #FE5341;
+}
+
+/* 404 error */
+.error_container_404 {
+    align-items: center;
+    background-color: rgba(192, 21, 21, 0.856);
+    padding-left: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.btn_error {
+    color: white;
+    background-color: rgb(192, 40, 40);
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.btn_error:hover {
+    cursor: pointer
+}
+
+.btn_error:active {
+    background-color: rgb(161, 35, 35);
+}
+
+/* INVALID input */
+
+.error_container_invalid {
+    align-items: center;
+    background-color: rgba(192, 118, 21, 0.856);
+    padding-left: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.btn_error_invalid {
+    color: white;
+    background-color: rgb(175, 111, 38);
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.btn_error_invalid:hover {
+    cursor: pointer
+}
+
+.btn_error_invalid:active {
+    background-color: rgb(136, 85, 27);
+}
+
+/* ==========================USER WEAHER CARD ===================*/
+
+.user_weather_card{
+    display:flex;
+    width:500px;
+    margin-left:25px;
+    color:white;
+    align-items:center;
+    justify-content:space-evenly;
+}
+
+.user_weather_card_img{
+    width:70px;
+}
+
+
+
+
+/* LOADING ANIM */
+
+.ball {
+    width: 50px;
+    height: 50px;
+    background:
+        url('https://media.istockphoto.com/vectors/rye-round-bread-vector-id985170060?s=612x612') no-repeat center;
+    background-size: cover;
+    border-radius:50%;
+
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
