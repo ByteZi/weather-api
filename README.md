@@ -22,6 +22,7 @@ Using Geolocation, we grab the current longitude and latitude and pass it on to 
 <br>
 
 ## OpenWeaterAPI
+![WebPage](gitAssets/MainSearch.png)
 
 This API lets you search specific city weathers based on name search, this API has limited calls on it and will refresh after a day
 
