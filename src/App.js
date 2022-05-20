@@ -34,10 +34,10 @@ function App() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(position => {
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=hourly,minutely&appid=${WEATHER_API.KEY2}&units=metric`)
-            .then(res => setUserTemp( () => UnixConvert(res.data.current)))
+            .then(res => setUserTemp(UnixConvert(res.data.current)))
             .catch(err => console.log(err))
     })
-  })
+  },[])
 
   const UnixHelp = (unix_timestamp) => {
     const time = new Date(unix_timestamp * 1000)
