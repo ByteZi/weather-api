@@ -15,13 +15,20 @@ function App() {
   const [userTemp, setUserTemp] = useState(false)
 
   const [userTime, setUserTime] = useState('')
-    const Clock = () => {
+  
+  const Clock = () => {
       const current = new Date();
       setUserTime(current.toLocaleTimeString())
   }
   setInterval(Clock, 1000)
 
   const UnixConvert = (data) => {
+
+    const UnixHelp = (unix_timestamp) => {
+      const time = new Date(unix_timestamp * 1000)
+      return time.toLocaleTimeString()
+    }
+    
     data['bool'] = true
     for (let key in data){
       if(key === 'sunrise' || key === 'sunset' ){//|| key === 'dt'
@@ -34,15 +41,14 @@ function App() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(position => {
         axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=hourly,minutely&appid=${WEATHER_API.KEY2}&units=metric`)
-            .then(res => setUserTemp(UnixConvert(res.data.current)))
-            .catch(err => console.log(err))
+            .then(res => 
+              {
+                setUserTemp(UnixConvert(res.data.current))
+              })
+                .catch(err => console.log(err))
     })
   },[])
 
-  const UnixHelp = (unix_timestamp) => {
-    const time = new Date(unix_timestamp * 1000)
-    return time.toLocaleTimeString()
-  }
 
   return (
     <div className="App">
