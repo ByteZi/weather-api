@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const Form = (props) => {
 
-    const {userTemp, userTime , setUserTemp} = props
+    const {userTemp, userTime } = props
     const [input, setInput] = useState('')
     const [cityError, setCityError] = useState('')
 
