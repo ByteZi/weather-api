@@ -36,7 +36,7 @@ const Form = (props) => {
                     {
                         userTemp &&
                         <div className='user_weather_card'>
-                                <img className='user_weather_card_img' src={`http://openweathermap.org/img/wn/${userTemp.weather[0].icon}@2x.png`} alt='weather' />
+                                <img className='user_weather_card_img' src={`https://openweathermap.org/img/wn/${userTemp.weather[0].icon}@2x.png`} alt='weather' />
                                 <h3>| {userTemp.weather[0].description} | </h3>
                         
                             <h3 className='pointer'>Temp : {Math.ceil(userTemp.temp)} °{userTemp.bool === true ? 'C' : 'F'}</h3>
