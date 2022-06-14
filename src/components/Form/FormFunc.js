@@ -1,5 +1,5 @@
 import axios from 'axios'
-import WEATHER_API from '../weather_api'
+
 
 const AddBool = (name, data) => {
     if (name === 'forecast') {
@@ -56,7 +56,7 @@ const FormFunc = {
 
         if (input === '') return setCityError('invalid')
 
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${WEATHER_API.KEY2}&units=metric`)//&units=metric to conver C default
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${process.env.REACT_APP_KEY}&units=metric`)//&units=metric to conver C default
             .then(res => {
                 setInput('')
                 setCity(AddBool('city', res.data))
@@ -65,7 +65,7 @@ const FormFunc = {
                 return cord
             })
             .then((cord) => {
-                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${cord.lat}&lon=${cord.lon}&exclude=hourly,minutely&appid=${WEATHER_API.KEY2}&units=metric`)//&units=metric to conver C default
+                axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${cord.lat}&lon=${cord.lon}&exclude=hourly,minutely&appid=${process.env.REACT_APP_KEY}&units=metric`)//&units=metric to conver C default
                     .then(res => {
                         setTimeZone(res.data.timezone)
                         setTempList(AddBool('forecast', res.data.daily))

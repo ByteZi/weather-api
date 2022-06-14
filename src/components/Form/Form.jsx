@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const Form = (props) => {
 
-    const {userTemp, userTime } = props
+    const {userTemp} = props
     const [input, setInput] = useState('')
     const [cityError, setCityError] = useState('')
 
@@ -40,7 +40,7 @@ const Form = (props) => {
                                 <h3>| {userTemp.weather[0].description} | </h3>
                         
                             <h3 className='pointer'>Temp : {Math.ceil(userTemp.temp)} °{userTemp.bool === true ? 'C' : 'F'}</h3>
-                            <h3>| {userTime} |</h3>
+                            
 
                         </div>
                     }
