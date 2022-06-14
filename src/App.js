@@ -9,6 +9,7 @@ function App() {
 
 
   console.log(process.env)
+
   const [city, setCity] = useState('')
   const [tempList, setTempList] = useState([]);
   const [timeZone, setTimeZone] = useState('')
@@ -51,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      {process.env.REACT_APP_KEY}
+     
       <Form setCity={setCity} setTempList={setTempList} setLoad={setLoad} setTimeZone={setTimeZone} city={city} userTemp={userTemp} setUserTemp={setUserTemp} />
       {load && <Display city={city} tempList={tempList} timeZone={timeZone} setTempList={setTempList} userTemp={userTemp} setCity={setCity}/>}
 
